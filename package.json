@@ -1,0 +1,33 @@
+{
+	"name": "rgdevme-blocks",
+	"version": "0.1.0",
+	"description": "Example block scaffolded with Create Block tool.",
+	"author": "The WordPress Contributors",
+	"license": "GPL-2.0-or-later",
+	"main": "build/index.js",
+	"scripts": {
+		"build": "npm run clean:build && npm run blocks:build && npm run sass:build",
+		"clean": "npx rimraf node_modules && npm run clean:build",
+		"clean:build": "npx rimraf build",
+		"build:blocks": "wp-scripts build",
+		"build:sass": "sass ./src/scss/global.scss ./build/style.css --style=compressed",
+		"watch:blocks": "wp-scripts start --output-path=build",
+		"watch:sass": "sass --watch --update ./src/scss/global.scss ./build/style.css --style=expanded",
+		"clean:format": "wp-scripts format",
+		"clean:lint:css": "wp-scripts lint-style",
+		"clean:lint:js": "wp-scripts lint-js",
+		"config:packages-update": "wp-scripts packages-update",
+		"config:plugin-zip": "wp-scripts plugin-zip",
+		"config:scaffold": "node scaffold.mjs"
+	},
+	"devDependencies": {
+		"@wordpress/scripts": "^26.5.0",
+		"concurrently": "^8.1.0",
+		"inquirer": "^9.2.7",
+		"sass": "^1.63.2"
+	},
+	"dependencies": {
+		"@wordpress/components": "^25.0.0",
+		"@wordpress/server-side-render": "^4.11.0"
+	}
+}
