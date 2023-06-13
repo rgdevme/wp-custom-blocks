@@ -1,0 +1,33 @@
+.ah-breadcrumb {
+	display: flex;
+	flex-flow: row nowrap;
+	list-style: none;
+	margin: 2rem 0;
+
+	li {
+		margin-right: 10px;
+
+		&:last-of-type {
+			margin-right: 0;
+		}
+		a {
+			color: inherit;
+
+			&:hover {
+				text-decoration: none;
+			}
+		}
+	}
+
+	.separator {
+		color: #17b58f;
+	}
+
+	.item {
+		color: #6b737a;
+
+		&:first-of-type {
+			color: #42474f;
+		}
+	}
+}
