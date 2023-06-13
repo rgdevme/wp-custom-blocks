@@ -1,0 +1,104 @@
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+.wp-block-rgdevme-hero {
+	position: relative;
+	aspect-ratio: var(--ardesktop);
+	padding: 1rem;
+
+	@media screen and (max-width: 650px) {
+		aspect-ratio: var(--armobile);
+	}
+
+	@media (min-width: 1200px) {
+		max-width: 1630px !important;
+		padding: 1rem 2rem !important;
+	}
+
+	&[data-width='screen'] {
+		padding-top: 0 !important;
+	}
+
+	> div {
+		background-image: var(--bgdesktop);
+		background-position: center;
+		background-size: cover;
+		padding: 80px;
+		margin: 1rem auto;
+		display: grid;
+		border-radius: 10px;
+		width: 100%;
+		height: 100%;
+
+		@media screen and (max-width: 650px) {
+			background-image: var(--bgmobile);
+		}
+
+		> * {
+			margin: 0;
+			line-height: 1;
+		}
+
+		> .rgdevme-hero-title {
+			grid-area: title;
+		}
+
+		> .rgdevme-hero-text {
+			grid-area: text;
+		}
+
+		> .rgdevme-hero-cta {
+			grid-area: ctalink;
+		}
+
+		&[data-width='screen'] {
+			position: absolute;
+			margin: 0;
+			left: 50%;
+			transform: translateX(-50%);
+			width: 100vw;
+			border-radius: 0;
+		}
+
+		&[data-layout='cta-right'] {
+			gap: 1rem;
+			grid-template:
+				'title 	ctalink' auto
+				'text		ctalink' auto
+				/ 1fr auto;
+			align-items: center;
+		}
+		&[data-appearance='clear'] {
+			> .rgdevme-hero-title,
+			> .rgdevme-hero-text {
+				color: #ffffff;
+			}
+		}
+
+		@media (max-width: 767px) {
+			padding: 4rem;
+		}
+
+		@media (max-width: 527px) {
+			padding: 4rem 2rem;
+
+			&[data-layout='cta-right'] {
+				grid-template:
+					'title' auto
+					'text' auto
+					'ctalink' auto
+					/ 1fr;
+
+				& .rgdevme-hero-title,
+				& .rgdevme-hero-text,
+				& .rgdevme-hero-cta {
+					text-align: center;
+				}
+			}
+		}
+	}
+}

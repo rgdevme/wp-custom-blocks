@@ -1,0 +1,73 @@
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+.wp-block-rgdevme-banner > div {
+	background-position: center;
+	background-size: cover;
+	padding: 80px;
+	margin: 1rem auto;
+	display: grid;
+	border-radius: 10px;
+	max-width: 100%;
+	width: 100%;
+}
+
+.wp-block-rgdevme-banner > div[data-layout='cta-right'] {
+	gap: 1rem;
+	grid-template:
+		'title 	ctalink' auto
+		'text		ctalink' auto
+		/ 1fr auto;
+	align-items: center;
+}
+
+.wp-block-rgdevme-banner > div[data-appearance='clear'] > .rgdevme-banner-title,
+.wp-block-rgdevme-banner > div[data-appearance='clear'] > .rgdevme-banner-text {
+	color: #ffffff;
+}
+
+.wp-block-rgdevme-banner > div > * {
+	margin: 0;
+	line-height: 1;
+}
+
+.wp-block-rgdevme-banner > div > .rgdevme-banner-title {
+	grid-area: title;
+}
+
+.wp-block-rgdevme-banner > div > .rgdevme-banner-text {
+	grid-area: text;
+}
+
+.wp-block-rgdevme-banner > div > .rgdevme-banner-cta {
+	grid-area: ctalink;
+}
+
+@media (max-width: 767px) {
+	.wp-block-rgdevme-banner > div {
+		padding: 4rem;
+	}
+}
+
+@media (max-width: 527px) {
+	.wp-block-rgdevme-banner > div {
+		padding: 4rem 2rem;
+	}
+	.wp-block-rgdevme-banner > div[data-layout='cta-right'] {
+		grid-template:
+			'title' auto
+			'text' auto
+			'ctalink' auto
+			/ 1fr;
+	}
+
+	.wp-block-rgdevme-banner > div[data-layout='cta-right'] .rgdevme-banner-title,
+	.wp-block-rgdevme-banner > div[data-layout='cta-right'] .rgdevme-banner-text,
+	.wp-block-rgdevme-banner > div[data-layout='cta-right'] .rgdevme-banner-cta {
+		text-align: center;
+	}
+}

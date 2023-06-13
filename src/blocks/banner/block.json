@@ -1,0 +1,71 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"title": "Banner",
+	"name": "rgdevme/banner",
+	"textdomain": "banner",
+	"version": "0.1.0",
+	"category": "attenne",
+	"icon": "align-full-width",
+	"keywords": [
+		"attane",
+		"gd",
+		"condor"
+	],
+	"description": "Multi-purpose banner",
+	"supports": {
+		"className": false
+	},
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"render": "file:./render.php",
+	"attributes": {
+		"bgmediaID": {
+			"type": "number"
+		},
+		"title": {
+			"type": "string",
+			"default": "Title"
+		},
+		"text": {
+			"type": "string",
+			"default": "Second line of text"
+		},
+		"ctatext": {
+			"type": "string",
+			"default": "Call to action"
+		},
+		"ctalink": {
+			"type": "string"
+		},
+		"ctatarget": {
+			"type": "boolean",
+			"default": true
+		},
+		"ctastyle": {
+			"type": "string",
+			"default": "default",
+			"enum": [
+				"default",
+				"dark",
+				"outline"
+			]
+		},
+		"layout": {
+			"type": "string",
+			"enum": [
+				"cta-right"
+			],
+			"default": "cta-right"
+		},
+		"appearance": {
+			"type": "string",
+			"enum": [
+				"clear",
+				"dark"
+			],
+			"default": "dark"
+		}
+	}
+}

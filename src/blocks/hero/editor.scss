@@ -1,0 +1,12 @@
+/**
+* The following styles get applied inside the editor only.
+*/
+@import url(../../scss/editor.scss);
+
+.wp-block-rgdevme-hero > div[data-width='screen'] {
+	position: static;
+	left: unset;
+	transform: unset;
+	width: 100%;
+	border-radius: 0;
+}

@@ -1,0 +1,62 @@
+/**
+* The following styles get applied both on the front of your site
+* and in the editor.
+*/
+
+@import url(../../scss/style.scss);
+
+$max: 12;
+$min: 1;
+
+.wp-block-rgdevme-grid {
+	padding: 0 1rem;
+
+	> div {
+		display: grid;
+		gap: 1rem;
+		justify-content: center;
+		align-items: flex-start;
+		grid-template-columns: repeat(var(--items-amount), 1fr);
+
+		> * {
+			width: 100%;
+		}
+	}
+
+	@mixin grid-template($amount) {
+		grid-template-columns: repeat($amount, 1fr);
+	}
+
+	@media screen and (max-width: 991px) {
+		%grid-style-3 {
+			@include grid-template(3);
+		}
+		@for $i from 4 through $max {
+			&[data-amount='#{$i}'] > div {
+				@extend %grid-style-3;
+			}
+		}
+	}
+
+	@media screen and (max-width: 768px) {
+		%grid-style-2 {
+			@include grid-template(2);
+		}
+		@for $i from 2 through $max {
+			&[data-amount='#{$i}'] > div {
+				@extend %grid-style-2;
+			}
+		}
+	}
+
+	@media screen and (max-width: 480px) {
+		%grid-style-1 {
+			@include grid-template(1);
+		}
+		@for $i from 1 through $max {
+			&[data-amount='#{$i}'] > div {
+				@extend %grid-style-1;
+			}
+		}
+	}
+}

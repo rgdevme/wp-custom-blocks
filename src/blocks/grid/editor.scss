@@ -1,0 +1,100 @@
+/**
+* The following styles get applied both on the front of your site
+* and in the editor.
+*/
+
+@import url(../../scss/editor.scss);
+
+.wp-block-rgdevme-grid {
+	> div {
+		padding: 0rem;
+		grid-template-columns: unset !important;
+
+		> div {
+			display: grid;
+			gap: 1rem;
+			justify-content: center;
+			align-items: flex-start;
+			grid-template-columns: repeat(4, 1fr);
+
+			> * {
+				width: 100%;
+			}
+		}
+	}
+	&[data-amount='1'] > div > div {
+		grid-template-columns: repeat(1, 1fr);
+	}
+	&[data-amount='2'] > div > div {
+		grid-template-columns: repeat(2, 1fr);
+	}
+	&[data-amount='3'] > div > div {
+		grid-template-columns: repeat(3, 1fr);
+	}
+	&[data-amount='4'],
+	&[data-amount='5'],
+	&[data-amount='6'],
+	&[data-amount='7'],
+	&[data-amount='8'],
+	&[data-amount='9'],
+	&[data-amount='10'],
+	&[data-amount='11'],
+	&[data-amount='12'] {
+		> div > div {
+			grid-template-columns: repeat(4, 1fr);
+		}
+	}
+
+	@media screen and (max-width: 991px) {
+		&[data-amount='4'],
+		&[data-amount='5'],
+		&[data-amount='6'],
+		&[data-amount='7'],
+		&[data-amount='8'],
+		&[data-amount='9'],
+		&[data-amount='10'],
+		&[data-amount='11'],
+		&[data-amount='12'] {
+			> div > div {
+				grid-template-columns: repeat(3, 1fr);
+			}
+		}
+	}
+
+	@media screen and (max-width: 768px) {
+		&[data-amount='2'],
+		&[data-amount='3'],
+		&[data-amount='4'],
+		&[data-amount='5'],
+		&[data-amount='6'],
+		&[data-amount='7'],
+		&[data-amount='8'],
+		&[data-amount='9'],
+		&[data-amount='10'],
+		&[data-amount='11'],
+		&[data-amount='12'] {
+			> div > div {
+				grid-template-columns: repeat(2, 1fr);
+			}
+		}
+	}
+
+	@media screen and (max-width: 480px) {
+		&[data-amount='1'],
+		&[data-amount='2'],
+		&[data-amount='3'],
+		&[data-amount='4'],
+		&[data-amount='5'],
+		&[data-amount='6'],
+		&[data-amount='7'],
+		&[data-amount='8'],
+		&[data-amount='9'],
+		&[data-amount='10'],
+		&[data-amount='11'],
+		&[data-amount='12'] {
+			> div > div {
+				grid-template-columns: repeat(1, 1fr);
+			}
+		}
+	}
+}

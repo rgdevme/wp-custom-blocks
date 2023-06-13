@@ -1,0 +1,28 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"title": "Grid",
+	"name": "rgdevme/grid",
+	"textdomain": "grid",
+	"version": "0.1.0",
+	"category": "attenne",
+	"icon": "grid-view",
+	"keywords": [
+		"attane",
+		"gd",
+		"condor"
+	],
+	"supports": {
+		"className": false
+	},
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"render": "file:./render.php",
+	"attributes": {
+		"amount": {
+			"type": "number",
+			"default": 3
+		}
+	}
+}
